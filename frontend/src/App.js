@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Upload from "./components/Upload";
 import Dashboard from "./components/Dashboard";
+import Charts from "./components/Charts";
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
             <Upload setData={setData} />
 
             <Dashboard data={data} />
+
+            <Charts data={data} />
 
         </div>
     );

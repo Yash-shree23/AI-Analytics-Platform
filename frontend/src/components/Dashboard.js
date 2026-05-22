@@ -75,29 +75,35 @@ function Dashboard({ data }) {
                 }
 
             </div>
-            <div className="card">
+       <div className="card">
 
-    <h3>Numerical Summary</h3>
+    <h3>Numerical Insights</h3>
 
     {
         Object.entries(data.numerical_summary).map(
             ([column, stats], index) => (
 
-                <div key={index}>
+                <div
+                    key={index}
+                    style={{
+                        marginBottom: "25px",
+                        padding: "15px",
+                        borderRadius: "15px",
+                        background: "rgba(255,255,255,0.05)"
+                    }}
+                >
 
                     <h4>{column}</h4>
 
-                    <p>Mean: {stats.mean}</p>
+                    <p>📊 Mean: {stats.mean}</p>
 
-                    <p>Median: {stats.median}</p>
+                    <p>📈 Median: {stats.median}</p>
 
-                    <p>Min: {stats.min}</p>
+                    <p>⬇ Min: {stats.min}</p>
 
-                    <p>Max: {stats.max}</p>
+                    <p>⬆ Max: {stats.max}</p>
 
-                    <p>Std: {stats.std}</p>
-
-                    <hr />
+                    <p>📉 Std Dev: {stats.std}</p>
 
                 </div>
             )
