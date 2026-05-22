@@ -131,6 +131,73 @@ function Charts({ data }) {
         ]
     };
 
+    // COMMON OPTIONS
+    const commonOptions = {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            legend: {
+
+                labels: {
+
+                    color: "white",
+
+                    font: {
+                        size: 14
+                    }
+                }
+            }
+        },
+
+        scales: {
+
+            x: {
+
+                ticks: {
+
+                    color: "white"
+                },
+
+                grid: {
+
+                    color: "rgba(255,255,255,0.08)"
+                }
+            },
+
+            y: {
+
+                ticks: {
+
+                    color: "white"
+                },
+
+                grid: {
+
+                    color: "rgba(255,255,255,0.08)"
+                }
+            }
+        }
+    };
+
+    // PIE OPTIONS
+    const pieOptions = {
+
+        plugins: {
+
+            legend: {
+
+                labels: {
+
+                    color: "white"
+                }
+            }
+        }
+    };
+
     // COMMON CARD STYLE
     const chartCardStyle = {
 
@@ -181,7 +248,18 @@ function Charts({ data }) {
                     📊 Mean Value Comparison
                 </h3>
 
-                <Bar data={barData} />
+                <div
+    style={{
+        height: "350px"
+    }}
+>
+
+    <Bar
+        data={barData}
+        options={commonOptions}
+    />
+
+</div>
 
             </div>
 
@@ -198,7 +276,18 @@ function Charts({ data }) {
                     📈 Trend Analysis
                 </h3>
 
-                <Line data={lineData} />
+                <div
+    style={{
+        height: "350px"
+    }}
+>
+
+    <Line
+        data={lineData}
+        options={commonOptions}
+    />
+
+</div>
 
             </div>
 
@@ -222,7 +311,18 @@ function Charts({ data }) {
                     🥧 Distribution Analysis
                 </h3>
 
-                <Pie data={pieData} />
+                <div
+    style={{
+        height: "350px"
+    }}
+>
+
+    <Pie
+        data={pieData}
+        options={pieOptions}
+    />
+
+</div>
 
             </div>
 

@@ -73,6 +73,36 @@ async def upload(file: UploadFile = File(...)):
                 "std": float(round(df[col].std(), 2))
             }
 
+        # AI Insights
+        insights = []
+
+        for col in numerical_columns:
+
+            mean_value = df[col].mean()
+
+            std_value = df[col].std()
+
+            # High Mean Detection
+            if mean_value > 1000:
+
+                insights.append(
+                    f"{col} has high average value of {round(mean_value, 2)}"
+                )
+
+            # High Variance Detection
+            if std_value > mean_value:
+
+                insights.append(
+                    f"{col} shows high variance and unstable trend"
+                )
+
+            # Stable Data Detection
+            if std_value < (mean_value * 0.5):
+
+                insights.append(
+                    f"{col} data appears stable"
+                )
+
         # Final Response
         return {
 
@@ -88,7 +118,9 @@ async def upload(file: UploadFile = File(...)):
 
             "data_types": data_types,
 
-            "numerical_summary": numerical_summary
+            "numerical_summary": numerical_summary,
+
+            "insights": insights
         }
 
     except Exception as e:

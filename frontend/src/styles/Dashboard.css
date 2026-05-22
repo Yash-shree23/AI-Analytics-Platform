@@ -6,9 +6,9 @@
 
     display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-    gap: 25px;
+    gap: 20px;
 
     padding-bottom: 40px;
 }
@@ -44,7 +44,7 @@
 
     height: 180px;
 
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.05);
 
     border-radius: 50%;
 
@@ -55,38 +55,50 @@
 
 .card:hover {
 
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 
-    box-shadow: 0px 10px 40px rgba(139,92,246,0.4);
+    box-shadow: 0px 10px 35px rgba(139,92,246,0.35);
 }
 
 .card h3 {
 
     font-size: 22px;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
     color: #ffffff;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 .card h4 {
 
-    margin-top: 18px;
+    margin-top: 16px;
 
     margin-bottom: 10px;
 
     color: #93c5fd;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 .card p {
 
-    margin: 8px 0;
+    margin: 6px 0;
 
     color: #e2e8f0;
 
     font-size: 14px;
 
     line-height: 1.6;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 .empty {
@@ -98,4 +110,38 @@
     font-size: 24px;
 
     color: #cbd5e1;
+}
+.summary-scroll {
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    padding-right: 8px;
+}
+
+/* CUSTOM SCROLLBAR */
+
+.summary-scroll::-webkit-scrollbar {
+
+    width: 6px;
+}
+
+.summary-scroll::-webkit-scrollbar-track {
+
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 10px;
+}
+
+.summary-scroll::-webkit-scrollbar-thumb {
+
+    background: #8b5cf6;
+
+    border-radius: 10px;
+}
+
+.summary-scroll::-webkit-scrollbar-thumb:hover {
+
+    background: #7c3aed;
 }

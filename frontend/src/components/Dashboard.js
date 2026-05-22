@@ -78,6 +78,9 @@ function Dashboard({ data }) {
        <div className="card">
 
     <h3>Numerical Insights</h3>
+    <div
+    className="summary-scroll"
+>
 
     {
         Object.entries(data.numerical_summary).map(
@@ -109,7 +112,7 @@ function Dashboard({ data }) {
             )
         )
     }
-
+</div>
 </div>
 
         </div>

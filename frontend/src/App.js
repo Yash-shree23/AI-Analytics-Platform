@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Upload from "./components/Upload";
 import Dashboard from "./components/Dashboard";
 import Charts from "./components/Charts";
+import Insights from "./components/Insights";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Upload setData={setData} />
 
             <Dashboard data={data} />
+            <Insights data={data} />
 
             <Charts data={data} />
 
